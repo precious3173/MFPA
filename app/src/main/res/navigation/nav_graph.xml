@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home_Screen">
 
+    <fragment
+        android:id="@+id/home_Screen"
+        android:name="com.example.mfpa.HomeScreen"
+        android:label="fragment_home__screen"
+        tools:layout="@layout/fragment_home__screen" >
+        <action
+            android:id="@+id/action_home_Screen_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.mfpa.SettingsFragment"
+        android:label="SettingsFragment" >
+        <action
+            android:id="@+id/action_settingsFragment_to_home_Screen"
+            app:destination="@id/home_Screen" />
+    </fragment>
 </navigation>
