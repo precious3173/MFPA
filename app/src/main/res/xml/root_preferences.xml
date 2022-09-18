@@ -1,35 +1,39 @@
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory app:title="@string/messages_header">
+
+
+    <PreferenceCategory app:title="App Settings"
+        app:iconSpaceReserved="false">
 
         <EditTextPreference
-            app:key="signature"
-            app:title="@string/signature_title"
-            app:useSimpleSummaryProvider="true" />
+            app:title="Status"
+            app:key="key_status"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true"
+            app:dialogTitle="Status"
+            android:defaultValue="my status"
+            />
+        <Preference
+            app:key="key_Settings"
+            app:title="@string/Account_Settings"
+            app:iconSpaceReserved="false"
+            app:summary="Privacy Settings"/>
 
-        <ListPreference
-            app:defaultValue="reply"
-            app:entries="@array/reply_entries"
-            app:entryValues="@array/reply_values"
-            app:key="reply"
-            app:title="@string/reply_title"
-            app:useSimpleSummaryProvider="true" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            app:key="key_auto"
+        app:title="@string/auto_download"
+            app:iconSpaceReserved="false"
+            app:summary="Automatically download files"/>
 
-    </PreferenceCategory>
 
-    <PreferenceCategory app:title="@string/sync_header">
-
-        <SwitchPreferenceCompat
-            app:key="sync"
-            app:title="@string/sync_title" />
-
-        <SwitchPreferenceCompat
-            app:dependency="sync"
-            app:key="attachment"
-            app:summaryOff="@string/attachment_summary_off"
-            app:summaryOn="@string/attachment_summary_on"
-            app:title="@string/attachment_title" />
-
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="key_notification"
+            app:title="@string/notification"
+            app:iconSpaceReserved="false"
+            />
     </PreferenceCategory>
 
 </PreferenceScreen>
