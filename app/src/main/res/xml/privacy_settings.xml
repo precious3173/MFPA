@@ -16,4 +16,20 @@
             />
 
     </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:title="Privacy"
+        app:iconSpaceReserved="false"
+        >
+
+        <MultiSelectListPreference
+            android:entries="@array/privacy_info"
+            android:entryValues="@array/privacy_info_values"
+            android:title="My Public Info"
+            app:iconSpaceReserved="false"
+            android:key="key_public_info"
+            />
+
+    </PreferenceCategory>
 </PreferenceScreen>
