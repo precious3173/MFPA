@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_home_Screen_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_home_Screen_to_myFavourite2"
+            app:destination="@id/myFavourite" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -24,10 +27,16 @@
         <action
             android:id="@+id/action_settingsFragment_to_privacySetting"
             app:destination="@id/privacySetting" />
+
     </fragment>
+
+    <fragment
+        android:id="@+id/myFavourite"
+        android:name="com.example.mfpa.MyFavourite"
+        android:label="fragment_my_favourite"
+        tools:layout="@layout/fragment_my_favourite" />
     <fragment
         android:id="@+id/privacySetting"
         android:name="com.example.mfpa.PrivacySetting"
-        android:label="fragment_privacy_setting"
-        tools:layout="@layout/fragment_privacy_setting" />
+        android:label="PrivacySetting" />
 </navigation>
