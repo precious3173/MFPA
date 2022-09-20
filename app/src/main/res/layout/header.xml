@@ -15,5 +15,5 @@
         app:layout_constraintTop_toTopOf="parent"
         android:scaleType="centerCrop"
         android:contentDescription="Love hurts alot"
-        android:src="@drawable/download"/>
+        android:src="@drawable/naruto1"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
