@@ -7,10 +7,14 @@ import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
 import com.example.mfpa.databinding.FragmentHomeScreenBinding
+import java.util.Collections
 
 
-class HomeScreen : Fragment(), MenuProvider {
+class HomeScreen : Fragment() {
+
 
     private lateinit var binding : FragmentHomeScreenBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,12 +38,17 @@ class HomeScreen : Fragment(), MenuProvider {
         val menuHost: MenuHost = requireActivity()
 
 
-        menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
+ //       menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
+        val animeAdapter = AnimeAdapter(requireContext(), precious.animeList!!)
 
+        binding.recyclerview.adapter = animeAdapter
+        binding.recyclerview.setHasFixedSize(true)
+
+        itemTouchHelper.attachToRecyclerView(binding.recyclerview)
     }
 
-    override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+  /**  override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
 
         menuInflater.inflate(R.menu.settings_menu, menu)
     }
@@ -55,8 +64,32 @@ class HomeScreen : Fragment(), MenuProvider {
             }
             else ->
                 false
+    }    } **/
+
+
+
+
+   private val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(
+        ItemTouchHelper.UP or ItemTouchHelper.DOWN,0) {
+        override fun onMove(
+            recyclerView: RecyclerView,
+            viewHolder: RecyclerView.ViewHolder,
+            target: RecyclerView.ViewHolder
+        ): Boolean {
+
+            val start = target.adapterPosition
+            val end = target.adapterPosition
+
+            Collections.swap(precious.animeList, start, end)
+
+            binding.recyclerview.adapter!!.notifyItemMoved(start, end)
+
+            return true
         }
-    }
 
+        override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+            TODO("Not yet implemented")
+        }
 
+    })
 }

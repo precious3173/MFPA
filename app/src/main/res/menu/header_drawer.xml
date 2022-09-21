@@ -14,5 +14,28 @@
          android:icon="@drawable/ic_baseline_favorite_24"
          android:id="@+id/myFavourite"
          />
+
+     <item
+         android:title="Naruto Diary"
+         android:icon="@drawable/ic_baseline_menu_book_24"
+         android:id="@+id/diary"
+         />
+
+     <item
+         android:title="Naruto Musics"
+         android:icon="@drawable/ic_baseline_library_music_24"
+         android:id="@+id/music"
+         />
+
+     <item
+         android:title="Naruto Videos"
+         android:icon="@drawable/ic_baseline_video_library_24"
+         android:id="@+id/videos"
+         />
+     <item
+         android:title="Settings"
+         android:icon="@drawable/ic_baseline_settings_24"
+         android:id="@+id/settingsFragment"
+         />
  </group>
 </menu>
