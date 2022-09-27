@@ -15,7 +15,7 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.mfpa.SettingsFragment"
-        android:label="SettingsFragment" >
+        android:label="Settings" >
         <action
             android:id="@+id/action_settingsFragment_to_privacySetting"
             app:destination="@id/privacySetting" />

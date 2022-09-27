@@ -17,6 +17,7 @@ class HomeScreen : Fragment() {
 
 
     private lateinit var binding : FragmentHomeScreenBinding
+    private lateinit var recyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -35,15 +36,16 @@ class HomeScreen : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val menuHost: MenuHost = requireActivity()
+       // val menuHost: MenuHost = requireActivity()
 
 
  //       menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         val animeAdapter = AnimeAdapter(requireContext(), precious.animeList!!)
 
-        binding.recyclerview.adapter = animeAdapter
-        binding.recyclerview.setHasFixedSize(true)
+        recyclerView = binding.recyclerview
+        recyclerView.adapter = animeAdapter
+        recyclerView.setHasFixedSize(true)
 
         itemTouchHelper.attachToRecyclerView(binding.recyclerview)
     }
@@ -70,7 +72,7 @@ class HomeScreen : Fragment() {
 
 
    private val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(
-        ItemTouchHelper.UP or ItemTouchHelper.DOWN,0) {
+        ItemTouchHelper.UP or ItemTouchHelper.DOWN,ItemTouchHelper.RIGHT) {
         override fun onMove(
             recyclerView: RecyclerView,
             viewHolder: RecyclerView.ViewHolder,
@@ -80,15 +82,18 @@ class HomeScreen : Fragment() {
             val start = target.adapterPosition
             val end = target.adapterPosition
 
-            Collections.swap(precious.animeList, start, end)
+            precious.animeList?.let { Collections.swap(it, start, end) }
 
-            binding.recyclerview.adapter!!.notifyItemMoved(start, end)
+
+                recyclerView.adapter!!.notifyItemMoved(start, end)
 
             return true
         }
 
         override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-            TODO("Not yet implemented")
+
+
+
         }
 
     })

@@ -39,7 +39,6 @@ class AnimeAdapter(val context: Context, val animeList: ArrayList<HomeData>) : R
 
         private val characterNames = itemView.findViewById<TextView>(R.id.characterNames)
         private val characterImage = itemView.findViewById<ImageView>(R.id.characterImages)
-        private val favourite = itemView.findViewById<ImageView>(R.id.myFavourite)
 
 
         fun add(anime: HomeData, position: Int){

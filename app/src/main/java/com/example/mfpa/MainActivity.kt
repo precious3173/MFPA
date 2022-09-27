@@ -25,6 +25,9 @@ class MainActivity : AppCompatActivity() {
         binding.toolbar.setupWithNavController(navController, appBarConfiguration)
 
       binding.navView.setupWithNavController(navController)
+
+
+        lifecycle.addObserver(AnimeLifeCycleObserver())
     }
 
 }
