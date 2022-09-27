@@ -1,7 +1,9 @@
 package com.example.mfpa
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
@@ -30,4 +32,17 @@ class MainActivity : AppCompatActivity() {
         lifecycle.addObserver(AnimeLifeCycleObserver())
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        Toast.makeText(applicationContext, "OnStart Activity", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onPause() {
+        super.onPause()
+    }
+
+    override fun onResume() {
+        super.onResume()
+    }
 }
