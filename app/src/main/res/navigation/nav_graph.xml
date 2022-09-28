@@ -31,4 +31,24 @@
         android:id="@+id/privacySetting"
         android:name="com.example.mfpa.PrivacySetting"
         android:label="PrivacySetting" />
+
+    <fragment
+        android:id="@+id/animeImages"
+        android:name="com.example.mfpa.AnimeImages"
+        android:label="fragment_anime_images"
+        tools:layout="@layout/fragment_anime_images" />
+    <fragment
+        android:id="@+id/animeDiary"
+        android:name="com.example.mfpa.AnimeDiary"
+        android:label="fragment_anime_diary"
+        tools:layout="@layout/fragment_anime_diary" >
+        <action
+            android:id="@+id/action_animeDiary_to_addDiary"
+            app:destination="@id/addDiary" />
+    </fragment>
+    <fragment
+        android:id="@+id/addDiary"
+        android:name="com.example.mfpa.AddDiary"
+        android:label="fragment_add_diary"
+        tools:layout="@layout/fragment_add_diary" />
 </navigation>
