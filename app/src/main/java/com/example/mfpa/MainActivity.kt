@@ -7,6 +7,8 @@ import android.widget.Toast
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import com.example.mfpa.Database.AnimeDatabase
+import com.example.mfpa.Database.AnimeEntity
 import com.example.mfpa.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,8 +17,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+
         val  view = binding.root
         setContentView(view)
+
+       val animeData = AnimeDatabase.animeData(applicationContext)
+
+
+        val animeDao = animeData!!.animeDao()
+
+        val animeList : List<AnimeEntity> = animeDao.getAll()
+
+       // animeDao.insert(AnimeEntity(1, ))
 
         val navHostFragment= supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment?
 
@@ -30,6 +42,7 @@ class MainActivity : AppCompatActivity() {
 
 
         lifecycle.addObserver(AnimeLifeCycleObserver())
+
     }
 
     override fun onStart() {

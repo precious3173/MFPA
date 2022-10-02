@@ -1,9 +1,8 @@
-package com.example.mfpa
+package com.example.mfpa.Database
 
-import android.arch.persistence.room.Database
-import android.arch.persistence.room.Room
-import android.arch.persistence.room.RoomDatabase
-import android.arch.persistence.room.processor.Context
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
 
 
 @Database(entities = [AnimeEntity::class], version = 1)
@@ -16,7 +15,7 @@ companion object{
 
  private var animeInst : AnimeDatabase? = null
 
- fun database (context: android.content.Context): AnimeDatabase? {
+ fun animeData (context: android.content.Context): AnimeDatabase? {
 
   if (animeInst == null){
 
