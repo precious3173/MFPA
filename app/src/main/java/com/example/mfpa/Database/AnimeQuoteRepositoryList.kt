@@ -20,6 +20,6 @@ class AnimeQuoteRepositoryList(private val animeQuoteDao : AnimeQuotesDao): Anim
     }
 
     override fun getQuotes(): Flow<List<AnimeQuoteEntity>> {
-        animeQuoteDao.getQuotes()
+       return animeQuoteDao.getQuotes()
     }
 }

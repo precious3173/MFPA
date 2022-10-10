@@ -10,7 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.mfpa.AnimeLifeCycleObserver
 import com.example.mfpa.Database.AnimeDatabase
 import com.example.mfpa.Database.AnimeEntity
-import com.example.mfpa.Database.AnimeViewModel
+import com.example.mfpa.ViewModel.AnimeViewModel
 import com.example.mfpa.R
 import com.example.mfpa.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
        val animeData = AnimeDatabase.animeData(applicationContext)
 
 
-        val animeDao = animeData!!.animeDao()
+        val animeDao = animeData!!.animeDao
 
         val animeList : List<AnimeEntity> = animeDao.getAll()
 
