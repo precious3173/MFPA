@@ -1,15 +1,13 @@
-package com.example.mfpa
+package com.example.mfpa.Ui
 
 import android.os.Bundle
 import android.view.*
-import androidx.core.view.MenuHost
-import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Lifecycle
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mfpa.AnimeAdapter
 import com.example.mfpa.databinding.FragmentHomeScreenBinding
+import com.example.mfpa.precious
 import java.util.Collections
 
 

@@ -1,4 +1,4 @@
-package com.example.mfpa
+package com.example.mfpa.Ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

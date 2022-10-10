@@ -1,15 +1,12 @@
-package com.example.mfpa
+package com.example.mfpa.Ui
 
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.preference.Preference
 import androidx.preference.PreferenceDataStore
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreference
-import java.util.prefs.Preferences
+import com.example.mfpa.R
 
 class SettingsFragment : PreferenceFragmentCompat() {
 

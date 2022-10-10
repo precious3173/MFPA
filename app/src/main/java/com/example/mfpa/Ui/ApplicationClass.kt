@@ -1,4 +1,4 @@
-package com.example.mfpa
+package com.example.mfpa.Ui
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

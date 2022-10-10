@@ -3,23 +3,18 @@ package com.example.mfpa.Database
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.os.AsyncTask
+import androidx.lifecycle.ViewModel
 import com.example.mfpa.Database.AnimeDao
 import com.example.mfpa.Database.AnimeDatabase
 import com.example.mfpa.Database.AnimeEntity
+import javax.inject.Inject
 
-class AnimeViewModel (application: Application) : AndroidViewModel(application) {
+class AnimeViewModel @Inject constructor() : ViewModel() {
 
-    private val animeDao: AnimeDao
+init {
 
-    init {
-        val  animeDatabase = AnimeDatabase.animeData(application)
-        animeDao = animeDatabase!!.animeDao()
-    }
+}
 
-    fun insert (animeEntity: AnimeEntity){
-        InsertAsyn(animeDao).execute(animeEntity)
 
-    }
 
-    private inner class InsertAsyn(private val animeDao: AnimeDao) : AsyncTask<AnimeEntity, Void, Void>
 }

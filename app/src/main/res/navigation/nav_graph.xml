@@ -7,14 +7,14 @@
 
     <fragment
         android:id="@+id/home_Screen"
-        android:name="com.example.mfpa.HomeScreen"
+        android:name="com.example.mfpa.Ui.HomeScreen"
         android:label="Home"
         tools:layout="@layout/fragment_home__screen" >
 
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.mfpa.SettingsFragment"
+        android:name="com.example.mfpa.Ui.SettingsFragment"
         android:label="Settings" >
         <action
             android:id="@+id/action_settingsFragment_to_privacySetting"
@@ -29,7 +29,7 @@
         tools:layout="@layout/fragment_my_favourite" />
     <fragment
         android:id="@+id/privacySetting"
-        android:name="com.example.mfpa.PrivacySetting"
+        android:name="com.example.mfpa.Ui.PrivacySetting"
         android:label="PrivacySetting" />
 
     <fragment
@@ -39,7 +39,7 @@
         tools:layout="@layout/fragment_anime_images" />
     <fragment
         android:id="@+id/animeDiary"
-        android:name="com.example.mfpa.AnimeQuote"
+        android:name="com.example.mfpa.Ui.AnimeQuote"
         android:label="fragment_anime_diary"
         tools:layout="@layout/fragment_anime_diary" >
         <action

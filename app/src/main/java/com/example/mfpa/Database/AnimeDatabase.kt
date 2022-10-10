@@ -5,10 +5,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(entities = [AnimeEntity::class], version = 1)
+@Database(entities = [AnimeEntity::class, AnimeQuoteEntity::class], version = 1)
 abstract class AnimeDatabase : RoomDatabase() {
 
  abstract fun animeDao(): AnimeDao
+ abstract val animeQuotesDao: AnimeQuotesDao
 
 companion object{
 

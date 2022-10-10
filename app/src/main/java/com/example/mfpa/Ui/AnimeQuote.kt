@@ -1,4 +1,4 @@
-package com.example.mfpa
+package com.example.mfpa.Ui
 
 import android.os.Bundle
 import android.text.Editable
@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.mfpa.R
 import com.example.mfpa.databinding.FragmentAnimeDiaryBinding
 
 
