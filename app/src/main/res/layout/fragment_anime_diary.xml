@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Ui.AnimeQuote">
+    tools:context=".Ui.AnimeQuote"
+    android:background="#171616">
 
    <LinearLayout
        android:layout_width="match_parent"
@@ -18,15 +19,16 @@
           android:textColor="@color/white"
           android:layout_margin="25dp"
           android:hint="Search for quote"
-          android:textColorHint="@color/white"
+          android:textColorHint="#151515"
           android:textAlignment="center"
-          android:background="#58B5C1"
+          android:background="#CED5D6"
           />
 
       <androidx.recyclerview.widget.RecyclerView
           android:layout_width="match_parent"
           android:id="@+id/diaryRecyclerview"
           android:layout_height="match_parent"
+          tools:listitem="@layout/diary_layout"
           />
    </LinearLayout>
 
@@ -38,6 +40,6 @@
        app:layout_constraintBottom_toBottomOf="parent"
        android:layout_margin="20dp"
        android:id="@+id/addDiary"
-       android:backgroundTint="#58B5C1"
+       android:backgroundTint="#CED5D6"
        android:src="@drawable/ic_baseline_add_24"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

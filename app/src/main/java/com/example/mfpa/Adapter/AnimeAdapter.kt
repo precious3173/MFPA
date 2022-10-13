@@ -1,15 +1,15 @@
-package com.example.mfpa
+package com.example.mfpa.Adapter
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mfpa.HomeData
+import com.example.mfpa.R
 
 class AnimeAdapter(val context: Context, val animeList: ArrayList<HomeData>) : RecyclerView.Adapter<AnimeAdapter.AnimeViewHolder>(),
     View.OnClickListener {

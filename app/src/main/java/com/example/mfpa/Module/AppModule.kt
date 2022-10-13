@@ -4,8 +4,8 @@ import android.app.Application
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.mfpa.Database.AnimeDatabase
-import com.example.mfpa.Database.AnimeQuoteRepository
-import com.example.mfpa.Database.AnimeQuoteRepositoryList
+import com.example.mfpa.Database.Repository.AnimeQuoteRepository
+import com.example.mfpa.Database.Repository.AnimeQuoteRepositoryList
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,22 +18,18 @@ object AppModule {
 
     @Provides
     @Singleton
-
-    fun provideAnimeQuotesDatabase (application: Application): RoomDatabase.Builder<AnimeDatabase> {
+    fun provideAnimeQuotesDatabase (application: Application): AnimeDatabase {
         return Room.databaseBuilder(
             application,
             AnimeDatabase::class.java,
             "animeDatabase"
-        )
+        ).build()
 
     }
 
-    //val animeDatabase = AnimeDatabase.animeData()
 
     @Provides
-    @Singleton
-
-    fun provideAnimeQuotesRepository (database: AnimeDatabase): AnimeQuoteRepository{
+    fun provideAnimeQuotesRepository (database: AnimeDatabase): AnimeQuoteRepository {
 
         return AnimeQuoteRepositoryList(database.animeQuotesDao)
     }

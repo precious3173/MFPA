@@ -7,13 +7,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.mfpa.R
+import com.example.mfpa.ViewModel.AnimeViewModel
 import com.example.mfpa.databinding.FragmentAnimeDiaryBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class AnimeQuote : Fragment() {
 
+    private val viewModel: AnimeViewModel by viewModels()
    private lateinit var binding: FragmentAnimeDiaryBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

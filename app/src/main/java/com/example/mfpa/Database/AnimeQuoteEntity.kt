@@ -6,5 +6,6 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "animeQuote")
 data class AnimeQuoteEntity(val character : String,
                             val quote: String,
+                            val isdone: Boolean,
                             @PrimaryKey val id : Int? = null
                             )

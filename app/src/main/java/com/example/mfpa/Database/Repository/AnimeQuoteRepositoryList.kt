@@ -1,5 +1,7 @@
-package com.example.mfpa.Database
+package com.example.mfpa.Database.Repository
 
+import com.example.mfpa.Database.AnimeQuoteEntity
+import com.example.mfpa.Database.AnimeQuotesDao
 import kotlinx.coroutines.flow.Flow
 
 class AnimeQuoteRepositoryList(private val animeQuoteDao : AnimeQuotesDao): AnimeQuoteRepository {

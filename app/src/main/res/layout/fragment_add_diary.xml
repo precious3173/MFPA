@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AddDiary">
+    tools:context=".Ui.AddDiary"
+    android:background="#171616">
 
     <EditText
         android:layout_width="match_parent"
@@ -12,25 +13,31 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="15dp"
         android:layout_marginStart="15dp"
-        android:hint="What is your Story all about"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:hint="Author"
          android:id="@+id/title"
         />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Tell your story"
+        android:hint="Naruto Quote"
         android:layout_marginEnd="15dp"
         android:layout_marginTop="5dp"
         android:layout_marginStart="15dp"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:id="@+id/message" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add"
+        android:text="Save"
         android:id="@+id/add"
         android:textStyle="bold"
+        android:textSize="18sp"
+        android:backgroundTint="@color/blue"
         android:layout_margin="20dp"
         android:layout_gravity="center"/>
 

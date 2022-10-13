@@ -5,7 +5,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mfpa.AnimeAdapter
+import com.example.mfpa.Adapter.AnimeAdapter
 import com.example.mfpa.databinding.FragmentHomeScreenBinding
 import com.example.mfpa.precious
 import java.util.Collections

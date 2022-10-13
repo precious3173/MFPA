@@ -7,9 +7,7 @@ import androidx.activity.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
-import com.example.mfpa.AnimeLifeCycleObserver
 import com.example.mfpa.Database.AnimeDatabase
-import com.example.mfpa.Database.AnimeEntity
 import com.example.mfpa.ViewModel.AnimeViewModel
 import com.example.mfpa.R
 import com.example.mfpa.databinding.ActivityMainBinding
@@ -33,12 +31,6 @@ class MainActivity : AppCompatActivity() {
         val  view = binding.root
         setContentView(view)
 
-       val animeData = AnimeDatabase.animeData(applicationContext)
-
-
-        val animeDao = animeData!!.animeDao
-
-        val animeList : List<AnimeEntity> = animeDao.getAll()
 
        // animeDao.insert(AnimeEntity(1, ))
 
@@ -53,7 +45,6 @@ class MainActivity : AppCompatActivity() {
       binding.navView.setupWithNavController(navController)
 
 
-        lifecycle.addObserver(AnimeLifeCycleObserver())
 
     }
 
