@@ -21,8 +21,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var myString: String
     private lateinit var binding: ActivityMainBinding
 
-    private val animeViewModel: AnimeViewModel by viewModels()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

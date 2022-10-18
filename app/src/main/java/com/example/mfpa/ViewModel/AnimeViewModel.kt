@@ -1,11 +1,13 @@
 package com.example.mfpa.ViewModel
 
+import android.app.Application
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.mfpa.Database.AnimeQuoteEntity
+import com.example.mfpa.Database.AnimeQuotesDao
 import com.example.mfpa.Database.Repository.AnimeQuoteRepository
 import com.example.mfpa.Util.AnimeListEvent
-import com.example.mfpa.Util.Routes
 import com.example.mfpa.Util.UserEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -16,12 +18,15 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AnimeViewModel @Inject constructor(
-    private val repository: AnimeQuoteRepository
+    private val animeQuotesDao: AnimeQuotesDao
 ) : ViewModel() {
 
 
+ val animeQuoteEntity = animeQuotesDao.getQuotes().asLiveData()
 
-  val animeQuote = repository.getQuotes()
+
+
+/**  val animeQuote = repository.getQuotes()
 
   private val _userEvent = Channel<UserEvent> ()
     
@@ -59,15 +64,7 @@ class AnimeViewModel @Inject constructor(
              }
            }
 
-            is AnimeListEvent.OnDoneChange ->{
-            viewModelScope.launch {
-                repository.insertQuote(
-                    event.animeEntity.copy(
-                    isdone = event.isDone
-                    )
-                )
-            }
-            }
+
         }
     }
 
@@ -75,5 +72,5 @@ class AnimeViewModel @Inject constructor(
         viewModelScope.launch{
             _userEvent.send(event)
         }
-    }
+    }**/
 }

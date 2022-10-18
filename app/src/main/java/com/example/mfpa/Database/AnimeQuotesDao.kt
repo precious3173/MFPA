@@ -20,8 +20,8 @@ interface AnimeQuotesDao {
     @Update
     suspend fun updateQuote(animeQuoteEntity: AnimeQuoteEntity)
 
-    @Query ("Select *from animeQuote where id = :id")
-    suspend fun getQuoteId(id: Int):AnimeQuoteEntity?
+    //@Query ("Select *from animeQuote where id = :id")
+    //suspend fun getQuoteId(id: Int):AnimeQuoteEntity?
 
     @Query ("SELECT *FROM animeQuote")
     fun getQuotes() : Flow<List<AnimeQuoteEntity>>

@@ -9,16 +9,28 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.mfpa.Adapter.AnimeQuoteAdapter
+import com.example.mfpa.Database.AnimeQuoteEntity
+import com.example.mfpa.Database.Repository.AnimeQuoteRepositoryList
 import com.example.mfpa.R
 import com.example.mfpa.ViewModel.AnimeViewModel
 import com.example.mfpa.databinding.FragmentAnimeDiaryBinding
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class AnimeQuote : Fragment() {
 
     private val viewModel: AnimeViewModel by viewModels()
+
+    @Inject
+    lateinit var animeQuoteEntity: AnimeQuoteEntity
+
+    @Inject
+    lateinit var repositoryList: AnimeQuoteRepositoryList
+
    private lateinit var binding: FragmentAnimeDiaryBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -37,11 +49,21 @@ class AnimeQuote : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        val animeQuoteAdapter = AnimeQuoteAdapter()
        binding.addDiary.setOnClickListener {
 
            findNavController().navigate(R.id.action_animeDiary_to_addDiary)
        }
 
+        binding.apply {
+
+            diaryRecyclerview.apply {
+
+                adapter = animeQuoteAdapter
+                setHasFixedSize(true)
+            }
+        }
        binding.search.addTextChangedListener(object: TextWatcher{
            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                TODO("Not yet implemented")
@@ -59,5 +81,11 @@ class AnimeQuote : Fragment() {
        }
 
        )
+
+        viewModel.animeQuoteEntity.observe(viewLifecycleOwner){
+
+        }
     }
+
+
 }

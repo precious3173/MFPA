@@ -24,7 +24,7 @@
 
     <fragment
         android:id="@+id/myFavourite"
-        android:name="com.example.mfpa.MyFavourite"
+        android:name="com.example.mfpa.Ui.MyFavourite"
         android:label="Favourite"
         tools:layout="@layout/fragment_my_favourite" />
     <fragment
@@ -34,7 +34,7 @@
 
     <fragment
         android:id="@+id/animeImages"
-        android:name="com.example.mfpa.AnimeImages"
+        android:name="com.example.mfpa.Ui.AnimeImages"
         android:label="fragment_anime_images"
         tools:layout="@layout/fragment_anime_images" />
     <fragment
@@ -48,7 +48,13 @@
     </fragment>
     <fragment
         android:id="@+id/addDiary"
-        android:name="com.example.mfpa.AddDiary"
+        android:name="com.example.mfpa.Ui.AddDiary"
         android:label="fragment_add_diary"
-        tools:layout="@layout/fragment_add_diary" />
+        tools:layout="@layout/fragment_add_diary" >
+        <argument
+            android:name="anime"
+            app:argType="com.example.mfpa.Database.AnimeQuoteEntity"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
 </navigation>
