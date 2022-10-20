@@ -1,28 +1,29 @@
-package com.example.mfpa.Module
+package com.example.mfpa.module
 
-import android.app.Application
 import android.content.Context
-import androidx.room.Room
-import androidx.room.RoomDatabase
-import com.example.mfpa.Database.AnimeDatabase
-import com.example.mfpa.Database.AnimeQuoteEntity
-import com.example.mfpa.Database.Repository.AnimeQuoteRepository
-import com.example.mfpa.Database.Repository.AnimeQuoteRepositoryList
+import com.example.mfpa.Application.ApplicationClass
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.SupervisorJob
-import javax.inject.Qualifier
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
+
+
+    @Singleton
     @Provides
+    fun provideApp (@ApplicationContext app:Context) : ApplicationClass{
+
+        return app as ApplicationClass
+    }
+
+
+ /**   @Provides
     @Singleton
     fun provideAnimeQuotesDatabase (
         application: Application,
@@ -38,8 +39,6 @@ object AppModule {
 
 
 
-    @Provides
-    fun provideAnimeQuoteDao (database: AnimeDatabase) = database.animeQuotesDao()
 
     @CoroutineSco
     @Provides
@@ -49,4 +48,6 @@ object AppModule {
     @Retention(AnnotationRetention.RUNTIME)
     @Qualifier
     annotation class CoroutineSco
+
+  **/
 }

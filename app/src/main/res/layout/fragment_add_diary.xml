@@ -15,8 +15,8 @@
         android:layout_marginStart="15dp"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
-        android:hint="Author"
-         android:id="@+id/title"
+        android:hint="Anime Character"
+         android:id="@+id/character"
         />
 
     <EditText
@@ -28,7 +28,7 @@
         android:layout_marginStart="15dp"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
-        android:id="@+id/message" />
+        android:id="@+id/quote" />
 
     <Button
         android:layout_width="match_parent"

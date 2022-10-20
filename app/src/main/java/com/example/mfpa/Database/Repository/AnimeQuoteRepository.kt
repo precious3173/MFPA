@@ -11,7 +11,5 @@ interface AnimeQuoteRepository {
 
     suspend fun updateQuote(animeQuoteEntity: AnimeQuoteEntity)
 
-    suspend fun getQuoteId(id: Int): AnimeQuoteEntity?
-
     fun getQuotes() : Flow<List<AnimeQuoteEntity>>
 }

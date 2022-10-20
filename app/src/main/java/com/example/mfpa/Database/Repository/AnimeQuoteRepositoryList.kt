@@ -1,27 +1,25 @@
 package com.example.mfpa.Database.Repository
 
+import com.example.mfpa.Database.AnimeDatabase
 import com.example.mfpa.Database.AnimeQuoteEntity
 import com.example.mfpa.Database.AnimeQuotesDao
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class AnimeQuoteRepositoryList(private val animeQuoteDao : AnimeQuotesDao): AnimeQuoteRepository {
+class AnimeQuoteRepositoryList @Inject constructor (private val animeDatabase: AnimeDatabase): AnimeQuoteRepository {
     override suspend fun insertQuote(animeQuoteEntity: AnimeQuoteEntity) {
-        animeQuoteDao.insertQuote(animeQuoteEntity)
+        animeDatabase.animeQuotesDao().insertQuote(animeQuoteEntity)
     }
 
     override suspend fun deleteQuote(animeQuoteEntity: AnimeQuoteEntity) {
-        animeQuoteDao.deleteQuote(animeQuoteEntity)
+        animeDatabase.animeQuotesDao().deleteQuote(animeQuoteEntity)
     }
 
     override suspend fun updateQuote(animeQuoteEntity: AnimeQuoteEntity) {
-        animeQuoteDao.updateQuote(animeQuoteEntity)
-    }
-
-    override suspend fun getQuoteId(id: Int): AnimeQuoteEntity? {
-        return animeQuoteDao.getQuoteId(id)
+        animeDatabase.animeQuotesDao().updateQuote(animeQuoteEntity)
     }
 
     override fun getQuotes(): Flow<List<AnimeQuoteEntity>> {
-       return animeQuoteDao.getQuotes()
+       return animeDatabase.animeQuotesDao().getQuotes()
     }
 }

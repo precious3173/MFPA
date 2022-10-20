@@ -23,11 +23,9 @@ class AnimeQuote : Fragment() {
 
     private val viewModel: AnimeViewModel by viewModels()
 
-    @Inject
-    lateinit var animeQuoteEntity: AnimeQuoteEntity
+//    @Inject
+//    lateinit var animeQuoteEntity: AnimeQuoteEntity
 
-    @Inject
-    lateinit var repositoryList: AnimeQuoteRepositoryList
 
    private lateinit var binding: FragmentAnimeDiaryBinding
 
@@ -82,9 +80,7 @@ class AnimeQuote : Fragment() {
 
        )
 
-        viewModel.animeQuoteEntity.observe(viewLifecycleOwner){
 
-        }
     }
 
 

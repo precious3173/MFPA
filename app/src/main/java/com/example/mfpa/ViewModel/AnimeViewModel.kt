@@ -1,6 +1,7 @@
 package com.example.mfpa.ViewModel
 
 import android.app.Application
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
@@ -9,6 +10,7 @@ import com.example.mfpa.Database.AnimeQuotesDao
 import com.example.mfpa.Database.Repository.AnimeQuoteRepository
 import com.example.mfpa.Util.AnimeListEvent
 import com.example.mfpa.Util.UserEvent
+import dagger.assisted.Assisted
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
@@ -17,25 +19,27 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class AnimeViewModel @Inject constructor(
-    private val animeQuotesDao: AnimeQuotesDao
+class AnimeViewModel
+ @Inject constructor(
+   // private val animeQuotesDao: AnimeQuotesDao,
+    //private val stateHandle: SavedStateHandle
 ) : ViewModel() {
 
 
- val animeQuoteEntity = animeQuotesDao.getQuotes().asLiveData()
+   /**  val animeQuoteEntity = animeQuotesDao.getQuotes().asLiveData()
 
 
+    val animeQuote = repository.getQuotes()
 
-/**  val animeQuote = repository.getQuotes()
 
   private val _userEvent = Channel<UserEvent> ()
     
       val userEvent = _userEvent.receiveAsFlow()
 
     private var deletedAnime: AnimeQuoteEntity? = null
-    fun onEvent (event: AnimeListEvent){
+       fun onEvent (event: AnimeListEvent){
 
-        when(event){
+     when(event){
 
             is AnimeListEvent.onAnimeClick -> {
                 sendUiEvent(UserEvent.Navigate(Routes.ADD_EDIT + "?animeId=${

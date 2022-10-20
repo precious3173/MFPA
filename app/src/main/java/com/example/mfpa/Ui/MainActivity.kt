@@ -17,8 +17,8 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    @Inject
-    lateinit var myString: String
+//    @Inject
+//    lateinit var myString: String
     private lateinit var binding: ActivityMainBinding
 
 
