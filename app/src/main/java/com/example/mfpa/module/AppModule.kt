@@ -22,32 +22,4 @@ object AppModule {
         return app as ApplicationClass
     }
 
-
- /**   @Provides
-    @Singleton
-    fun provideAnimeQuotesDatabase (
-        application: Application,
-        animeCallback: AnimeDatabase.AnimeCallback
-    ) =
-         Room.databaseBuilder(
-            application,
-            AnimeDatabase::class.java,
-            "animeDatabase"
-        ).allowMainThreadQueries().fallbackToDestructiveMigration().
-         addCallback(animeCallback).build()
-
-
-
-
-
-    @CoroutineSco
-    @Provides
-    @Singleton
-    fun providesCoroutineScope() = CoroutineScope(SupervisorJob())
-
-    @Retention(AnnotationRetention.RUNTIME)
-    @Qualifier
-    annotation class CoroutineSco
-
-  **/
 }

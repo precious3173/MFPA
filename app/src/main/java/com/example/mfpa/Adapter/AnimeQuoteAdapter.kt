@@ -1,17 +1,12 @@
 package com.example.mfpa.Adapter
 
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mfpa.Database.AnimeQuoteEntity
-import com.example.mfpa.R
-import com.example.mfpa.Ui.AnimeQuote
 import com.example.mfpa.databinding.DiaryLayoutBinding
-import com.example.mfpa.databinding.FragmentAnimeDiaryBinding
 import javax.inject.Inject
 
 class AnimeQuoteAdapter @Inject constructor() : RecyclerView.Adapter<AnimeQuoteAdapter.AnimeQuote>() {
@@ -39,7 +34,7 @@ class AnimeQuoteAdapter @Inject constructor() : RecyclerView.Adapter<AnimeQuoteA
 
     override fun getItemCount(): Int = differ.currentList.size
 
-  private val differCallback = object:
+    private val differCallback = object:
   DiffUtil.ItemCallback<AnimeQuoteEntity>(){
       override fun areItemsTheSame(oldItem: AnimeQuoteEntity, newItem: AnimeQuoteEntity): Boolean {
           return oldItem.id == newItem.id

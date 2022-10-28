@@ -1,5 +1,6 @@
 package com.example.mfpa.Database.Repository
 
+import android.app.Application
 import com.example.mfpa.Database.AnimeDatabase
 import com.example.mfpa.Database.AnimeQuoteEntity
 import com.example.mfpa.Database.AnimeQuotesDao

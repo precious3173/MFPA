@@ -41,7 +41,7 @@
         android:id="@+id/animeDiary"
         android:name="com.example.mfpa.Ui.AnimeQuote"
         android:label="fragment_anime_diary"
-        tools:layout="@layout/fragment_anime_diary" >
+        tools:layout="@layout/fragment_anime_quote" >
         <action
             android:id="@+id/action_animeDiary_to_addDiary"
             app:destination="@id/addDiary" />
@@ -56,5 +56,8 @@
             app:argType="com.example.mfpa.Database.AnimeQuoteEntity"
             app:nullable="true"
             android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_addDiary_to_animeDiary"
+            app:destination="@id/animeDiary" />
     </fragment>
 </navigation>

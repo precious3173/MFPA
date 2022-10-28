@@ -29,8 +29,8 @@ object DatabaseModule {
         synchronized(this){
             val instance = Room.databaseBuilder(app.applicationContext,
               AnimeDatabase::class.java,
-                "Anime Database"
-                ).build()
+                "Anime_Database"
+                ).allowMainThreadQueries().build()
 
             INSTANCE = instance
             return instance

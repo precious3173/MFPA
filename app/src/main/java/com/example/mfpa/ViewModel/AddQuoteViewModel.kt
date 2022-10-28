@@ -24,9 +24,9 @@ constructor(
   //  private val state: SavedStateHandle
 ) : ViewModel() {
 
-    private val _AddUpdateEvent = Channel<AddUpdateEvent> ()
-
-    val AddUpdateEvents = _AddUpdateEvent.receiveAsFlow()
+//    private val _AddUpdateEvent = Channel<AddUpdateEvent> ()
+//
+//    val AddUpdateEvents = _AddUpdateEvent.receiveAsFlow()
 
 //    val animeQuoteEntity = state.get<AnimeQuoteEntity>("anime")
 
@@ -43,30 +43,30 @@ constructor(
 //            state.set("quote", value)
 //        }
 
-    fun onSave(){
-
-//        if (animeCharacter.isBlank() && animeQuote.isBlank()){
-//           emptyInput ("Character and Quote is empty")
-//        }
+//    fun onSave(){
 //
-//        if (animeQuoteEntity != null){
-//          val update = animeQuoteEntity.copy(character = animeCharacter, quote = animeQuote)
-//            updateQuote(update)
-//        }
-//        else{
-//            val  addNew = AnimeQuoteEntity(character = animeCharacter, quote = animeQuote)
+////        if (animeCharacter.isBlank() && animeQuote.isBlank()){
+////           emptyInput ("Character and Quote is empty")
+////        }
+////
+////        if (animeQuoteEntity != null){
+////          val update = animeQuoteEntity.copy(character = animeCharacter, quote = animeQuote)
+////            updateQuote(update)
+////        }
+////        else{
+////            val  addNew = AnimeQuoteEntity(character = animeCharacter, quote = animeQuote)
+////
+////            addNewQuote(addNew)
+////        }
+////        val delete = AnimeQuoteEntity(animeCharacter, animeQuote)
+////        deleteQuote(delete)
+//    }
+
+
+//    private fun emptyInput(s: String) = viewModelScope.launch {
 //
-//            addNewQuote(addNew)
-//        }
-//        val delete = AnimeQuoteEntity(animeCharacter, animeQuote)
-//        deleteQuote(delete)
-    }
-
-
-    private fun emptyInput(s: String) = viewModelScope.launch {
-
-        _AddUpdateEvent.send(AddUpdateEvent.InvalidInput(s))
-    }
+//        _AddUpdateEvent.send(AddUpdateEvent.InvalidInput(s))
+//    }
 
     fun addNewQuote(animeQuoteEntity: AnimeQuoteEntity) = viewModelScope.launch {
          animeQuoteRepositoryList.insertQuote(animeQuoteEntity)

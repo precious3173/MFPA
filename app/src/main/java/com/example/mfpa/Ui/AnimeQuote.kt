@@ -11,23 +11,22 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.mfpa.Adapter.AnimeQuoteAdapter
 import com.example.mfpa.Database.AnimeQuoteEntity
-import com.example.mfpa.Database.Repository.AnimeQuoteRepositoryList
 import com.example.mfpa.R
-import com.example.mfpa.ViewModel.AnimeViewModel
-import com.example.mfpa.databinding.FragmentAnimeDiaryBinding
+import com.example.mfpa.ViewModel.AddQuoteViewModel
+//import com.example.mfpa.databinding.FragmentAnimeDiaryBinding
+import com.example.mfpa.databinding.FragmentAnimeQuoteBinding
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class AnimeQuote : Fragment() {
 
-    private val viewModel: AnimeViewModel by viewModels()
+    private val viewModel: AddQuoteViewModel by viewModels()
 
 //    @Inject
 //    lateinit var animeQuoteEntity: AnimeQuoteEntity
 
 
-   private lateinit var binding: FragmentAnimeDiaryBinding
+   private lateinit var binding: FragmentAnimeQuoteBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +38,7 @@ class AnimeQuote : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentAnimeDiaryBinding.inflate(layoutInflater)
+        binding = FragmentAnimeQuoteBinding.inflate(layoutInflater)
 
         return  binding.root
     }
@@ -49,10 +48,18 @@ class AnimeQuote : Fragment() {
 
 
         val animeQuoteAdapter = AnimeQuoteAdapter()
-       binding.addDiary.setOnClickListener {
+        viewModel.getQuotes()
+        val animeQuoteEntity: MutableList<AnimeQuoteEntity> = mutableListOf()
 
-           findNavController().navigate(R.id.action_animeDiary_to_addDiary)
-       }
+
+        binding.addDiary.setOnClickListener {
+
+            findNavController().navigate(R.id.action_animeDiary_to_addDiary)
+        }
+
+
+
+
 
         binding.apply {
 
@@ -60,25 +67,11 @@ class AnimeQuote : Fragment() {
 
                 adapter = animeQuoteAdapter
                 setHasFixedSize(true)
+
+                animeQuoteAdapter.differ.submitList(animeQuoteEntity)
             }
+
         }
-       binding.search.addTextChangedListener(object: TextWatcher{
-           override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-               TODO("Not yet implemented")
-           }
-
-           override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-               val search  = p0.toString()
-
-           }
-
-           override fun afterTextChanged(p0: Editable?) {
-               TODO("Not yet implemented")
-           }
-
-       }
-
-       )
 
 
     }
