@@ -1,5 +1,6 @@
 package com.example.mfpa.ViewModel
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -23,6 +24,9 @@ constructor(
     private val animeQuoteRepositoryList: AnimeQuoteRepository,
   //  private val state: SavedStateHandle
 ) : ViewModel() {
+
+    val animeliveData = MutableLiveData<List<AnimeQuoteEntity>>()
+
 
 //    private val _AddUpdateEvent = Channel<AddUpdateEvent> ()
 //
@@ -81,5 +85,13 @@ constructor(
 
     }
 
-    fun getQuotes(): Flow<List<AnimeQuoteEntity>> = animeQuoteRepositoryList.getQuotes()
-}
+   fun getQuotes(): Flow<List<AnimeQuoteEntity>> = animeQuoteRepositoryList.getQuotes()
+
+//  fun  getQuotes() = viewModelScope.launch {
+//
+//      val getQuote =  animeQuoteRepositoryList.getQuotes().collect{
+//          quote ->
+//          animeliveData.postValue(getQuote)
+//      }
+
+  }

@@ -9,11 +9,13 @@ import com.example.mfpa.Database.AnimeQuoteEntity
 import com.example.mfpa.databinding.DiaryLayoutBinding
 import javax.inject.Inject
 
-class AnimeQuoteAdapter @Inject constructor() : RecyclerView.Adapter<AnimeQuoteAdapter.AnimeQuote>() {
+class AnimeQuoteAdapter(
+     ): RecyclerView.Adapter<AnimeQuoteAdapter.AnimeQuote>() {
+
 
     class AnimeQuote(private val binding: DiaryLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(animeQuoteEntity: AnimeQuoteEntity){
+        fun setItem (animeQuoteEntity: AnimeQuoteEntity){
 
             binding.apply {
                character.text = animeQuoteEntity.character
@@ -29,7 +31,7 @@ class AnimeQuoteAdapter @Inject constructor() : RecyclerView.Adapter<AnimeQuoteA
     }
 
     override fun onBindViewHolder(holder: AnimeQuote, position: Int) {
-        holder.bind(differ.currentList[position])
+        holder.setItem(differ.currentList[position] )
     }
 
     override fun getItemCount(): Int = differ.currentList.size
