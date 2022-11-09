@@ -30,7 +30,7 @@
           android:layout_height="match_parent"
           tools:listitem="@layout/diary_layout"
           app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-          app:stackFromEnd="true"
+          app:stackFromEnd="false"
           />
    </LinearLayout>
 

@@ -79,5 +79,8 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
     //implementation 'android.arch.lifecycle:common:1.1.1'
 
+    // retrofit dependencies
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'androidx.datastore:datastore-preferences:1.0.0'
 }
