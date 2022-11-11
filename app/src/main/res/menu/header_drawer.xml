@@ -28,9 +28,9 @@
          />
 
      <item
-         android:title="Naruto Musics"
-         android:icon="@drawable/ic_baseline_library_music_24"
-         android:id="@+id/music"
+         android:title="Naruto Games"
+         android:icon="@drawable/ic_baseline_games_24"
+         android:id="@+id/animeGames"
          />
 
      <item

@@ -60,4 +60,8 @@
             android:id="@+id/action_addDiary_to_animeDiary"
             app:destination="@id/animeDiary" />
     </fragment>
+    <fragment
+        android:id="@+id/animeGames"
+        android:name="com.example.mfpa.Ui.AnimeGames"
+        android:label="AnimeGames" />
 </navigation>
