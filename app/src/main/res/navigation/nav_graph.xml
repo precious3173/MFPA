@@ -63,5 +63,14 @@
     <fragment
         android:id="@+id/animeGames"
         android:name="com.example.mfpa.Ui.AnimeGames"
-        android:label="AnimeGames" />
+        android:label="AnimeGames" >
+        <action
+            android:id="@+id/action_animeGames_to_startGame"
+            app:destination="@id/startGame" />
+    </fragment>
+    <fragment
+        android:id="@+id/startGame"
+        android:name="com.example.mfpa.StartGame"
+        android:label="fragment_start_game"
+        tools:layout="@layout/fragment_start_game" />
 </navigation>

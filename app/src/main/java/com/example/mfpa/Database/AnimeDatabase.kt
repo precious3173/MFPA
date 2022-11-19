@@ -9,5 +9,5 @@ abstract class AnimeDatabase : RoomDatabase() {
 
  abstract fun animeQuotesDao(): AnimeQuotesDao
 
-
+ 
 }
